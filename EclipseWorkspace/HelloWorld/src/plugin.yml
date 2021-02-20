@@ -1,0 +1,11 @@
+main: me.kasper.helloworld.Main
+name: Hello
+description: Simple hello world plugin.
+version: 1.0
+author: Kasper
+api-version: 1.16
+prefix: HelloWorld
+
+commands:
+  hello:
+    usage: /<command>
