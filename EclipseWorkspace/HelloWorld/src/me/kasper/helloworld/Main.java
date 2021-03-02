@@ -36,7 +36,7 @@ public class Main extends JavaPlugin{
 				Player plyr = (Player) sender;
 				if(plyr.hasPermission("hello.use"))
 				{
-					plyr.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "Hey welcome to the server!");
+					plyr.sendMessage(ChatColor.YELLOW + "" + ChatColor.BOLD + "Hey " + plyr.getName() +" welcome to the server!");
 					plyr.sendMessage(ChatColor.translateAlternateColorCodes('&', "&1H&2a&3v&4e &5f&6u&7n&8!"));
 					return true;
 				}

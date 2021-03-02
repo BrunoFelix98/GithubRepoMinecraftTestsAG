@@ -10,6 +10,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import me.kasper.mobmaker.events.BlockPlace;
 import me.kasper.mobmaker.events.EntityDamage;
 import me.kasper.mobmaker.events.EntityDeath;
+import me.kasper.mobmaker.events.SnekDamage;
 import me.kasper.mobmaker.events.SpawnMob;
 
 public class Main extends JavaPlugin {
@@ -28,8 +29,10 @@ public class Main extends JavaPlugin {
 		pm.registerEvents(new EntityDamage(), this);
 		pm.registerEvents(new EntityDeath(this), this);
 		pm.registerEvents(new BlockPlace(this), this);
+		pm.registerEvents(new SnekDamage(), this);
 		
 		this.getCommand("spawnskelly").setExecutor(new SpawnMob());
+		this.getCommand("spawnsnek").setExecutor(new SpawnMob());
 	}
 	
 	@Override

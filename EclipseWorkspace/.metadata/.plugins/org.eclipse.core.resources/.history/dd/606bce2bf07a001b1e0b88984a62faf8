@@ -1,0 +1,12 @@
+main: me.kasper.mobmaker.Main
+name: MobMaker
+description: Mob maker testing grounds.
+version: 1.0
+author: Kasper
+api-version: 1.16
+
+commands:
+  SpawnSkelly:
+    usage: /<command>
+  SpawnSnek:
+    usage: /<command> <args>

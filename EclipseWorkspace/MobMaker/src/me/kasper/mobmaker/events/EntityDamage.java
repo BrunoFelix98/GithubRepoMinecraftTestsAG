@@ -10,7 +10,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class EntityDamage implements Listener{
-
+	
 	private ItemStack[] theifInventory = {
 			new ItemStack(Material.GOLD_NUGGET, 16),
 			new ItemStack(Material.GOLD_BLOCK, 2),

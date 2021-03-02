@@ -1,0 +1,64 @@
+package me.kasper.mobmaker.mobs;
+
+import org.bukkit.Location;
+import org.bukkit.craftbukkit.v1_16_R3.CraftWorld;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.LivingEntity;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
+import net.minecraft.server.v1_16_R3.ChatComponentText;
+import net.minecraft.server.v1_16_R3.EntityTypes;
+import net.minecraft.server.v1_16_R3.EntityZombie;
+
+public class Snakes extends EntityZombie{
+	
+	public String venomous;
+	public String extVenomous;
+
+	public Snakes(Location loc) {
+		
+		super(EntityTypes.ZOMBIE, ((CraftWorld) loc.getWorld()).getHandle());
+		
+		this.setPosition(loc.getX(), loc.getY(), loc.getZ());
+		
+		this.setCustomName(new ChatComponentText("Snek"));
+		
+		this.setCustomNameVisible(true);
+		this.setAggressive(true);
+	}
+	@EventHandler
+	public void onAttack(EntityDamageByEntityEvent event) {
+				
+	    Entity entity = event.getEntity();
+	    Entity damager = event.getDamager();
+	    
+	    LivingEntity target = (LivingEntity) entity;
+		target.sendMessage("I got to onAttack!");
+	    
+	    if(venomous == "True")
+	    {
+	    	int seconds = 10;
+		    
+		    int amplifier = 1;
+		    
+	    	if (entity instanceof LivingEntity && damager instanceof LivingEntity) {
+		         LivingEntity target1 = (LivingEntity) entity;
+		         target1.addPotionEffect(new PotionEffect(PotionEffectType.POISON, seconds * 20 * 3, amplifier));
+		     }
+	    }
+	    
+	    if(extVenomous == "True")
+	    {
+	    	int seconds = 10;
+		    
+		    int amplifier = 2;
+		    
+	    	if (entity instanceof LivingEntity && damager instanceof LivingEntity) {
+		         LivingEntity target1 = (LivingEntity) entity;
+		         target1.addPotionEffect(new PotionEffect(PotionEffectType.POISON, seconds * 20 * 3, amplifier));
+		     }
+	    }
+	}
+}

@@ -1,0 +1,5 @@
+package me.kasper.mobmaker.events;
+
+public class SnekDamage {
+
+}
